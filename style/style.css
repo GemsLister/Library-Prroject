@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito";
+}
+
+:root{
+    --form-color: #ef4565;
+    --background: #fffffe;
+    --btn-color: #3da9fc;
+    --paragraph-color: #5f6c7b;
+    --button-text: #fffffe;
+    --headline: #094067;
+    --header-color: #3da9fc;
+    --box-shadow: box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+    --submit-close: #90b4ce;
+}
+
+html body{
+    background-color: var(--background);
+}
+
+html button{
+    background-color: var(--btn-color);
+}
+
+body header{
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    /* border: 1px solid black; */
+}
+
+header section:nth-of-type(1){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 100%;
+}
+
+header section:nth-of-type(1) h1{
+    color: var(--headline);
+    font-size: clamp(1.5rem, 1vw, 1rem);
+    font-weight: 800;
+}
+
+header section:nth-of-type(1) button{
+    box-shadow: var(--box-shadow);
+    font-size: clamp(0.85rem, 1.5vw, 3rem);
+    background-color: var(--btn-color);
+    border: 0;
+    color: var(--button-text);
+}
+
+/* Form */
+form{
+    display: grid;
+    background-color: var(--form-color);
+    border: 1px solid red;
+}
+
+form section:nth-of-type(1){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submit-close{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submit-close button{
+    font-size: clamp(0.9rem, 1vw, 3rem);
+    color: var(--button-text);
+    border: 0;
+    background-color: var(--btn-color);
+}
+
+form h1{
+    font-size: clamp(1.3rem, 1vw, 3rem);
+    font-weight: 700;
+    color: var(--button-text);
+    align-items: center;
+}
+
+.library-container{
+    display: flex;
+}
+
+.library-container .card{
+    border: 2px solid var(--headline);
+}
+
+.delete-change{
+    display: flex;
+    justify-content: right;
+}
+
+.delete-change button{
+    border: 0;
+    background-color: var(--btn-color);
+    font-size: clamp(0.75rem, 1vw, 3rem);
+}
+
+@media screen and (max-width: 355px) and (min-width: 319px) {
+    form{
+        border-radius: 10px;
+        margin: 0 8vw 0 8vw;
+        height: 36.43vh;
+        grid-template-rows: 1vh 4rem;
+    }
+
+    form h1{
+        grid-row: 2;
+        padding: 2vh 0 0 11vw;
+    }
+
+    form section:nth-of-type(1){
+        grid-row: 3;
+        color: var(--button-text);
+        /* border: 1px solid black; */
+    }
+    
+    .submit-close{
+        width: 65vw;
+    }
+
+    .submit-close button{
+        width: 6rem;
+    }
+
+    form .input-group{
+        /* border: 1px solid blue; */
+        width: 65vw;
+    }
+    
+    form .input-group:nth-of-type(4){
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+    }
+
+
+    form .input-group .form-control{
+        height: 3vh;
+    }
+
+    .library-container{
+        margin: 2vh 0 0 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 2vh;
+    }
+
+    .library-container .card{
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+    }
+
+    /* .card-body *{
+        border: 1px solid brown;
+    } */
+
+    .card-body h4{
+        font-size: 1rem;
+    }
+
+    .delete-change{
+        gap: 1.5vw;
+    }
+}
