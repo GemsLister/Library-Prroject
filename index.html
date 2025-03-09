@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Title and Button -->
+        <section>
+            <h1>My Library</h1>
+            <button class="btn btn-primary" id="add-book">Add Book</button>
+        </section>
+    </header>
+
+    <main>
+        <form action="">
+            <h1>New Book</h1>
+            <!-- Input section -->
+            <section>
+                <!-- Title -->
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Title" aria-describedby="basic-addon1" id="title" required>
+                </div>
+                <!-- Author -->
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Author" aria-describedby="basic-addon2" id="author" required>
+                </div>
+                <!-- Pages -->
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control"  placeholder="Pages" aria-describedby="basic-addon3" id="pages" required>
+                </div>
+                <!-- Read or Not -->
+                 <div class="input-group">
+                    <input type="radio" name="read-status" id="read-status" required>
+                    <label for="readCheck">Read</label>
+                    <input type="radio" name="read-status" id="not-read-status" required>
+                    <label for="notReadCheck">Not read</label>
+                 </div>
+                
+                 <div class="submit-close mt-3">
+                    <button type="button" class="btn btn-primary" id="submit-button">Submit</button>
+                    <button type="button" class="btn btn-primary" id="close-button">Close</button>
+                 </div>
+            </section>
+        </form>
+        <section id="library-container"></section>
+    </main>
+</body>
+</html>
