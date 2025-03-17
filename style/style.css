@@ -20,7 +20,8 @@
 }
 
 html body{
-    background-color: var(--background);
+    background-color: #90b4ce;
+    /* background-color: var(--background); */
 }
 
 html button{
@@ -54,6 +55,12 @@ header section:nth-of-type(1) button{
     background-color: var(--btn-color);
     border: 0;
     color: var(--button-text);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Form */
@@ -90,11 +97,16 @@ form h1{
 }
 
 .library-container{
-    display: flex;
+    display: grid;
+    /* border: 1px solid black; */
 }
 
 .library-container .card{
     border: 2px solid var(--headline);
+}
+
+.library-container .card h4{
+    font-size: clamp(1rem, 1vw, 3rem);
 }
 
 .delete-change{
@@ -105,14 +117,83 @@ form h1{
 .delete-change button{
     border: 0;
     background-color: var(--btn-color);
-    font-size: clamp(0.75rem, 1vw, 3rem);
+    font-size: clamp(0.75rem, 1.5vw, 3rem);
 }
 
-@media screen and (max-width: 355px) and (min-width: 319px) {
+/* Mobile */
+@media screen and (max-width: 460px) and (min-width: 319px) {
     form{
         border-radius: 10px;
         margin: 0 8vw 0 8vw;
         height: 36.43vh;
+        width: 78vw;
+        grid-template-rows: 1vh 4rem;
+    }
+
+    form h1{
+        grid-row: 2;
+        padding: 2vh 0 0 11vw;
+    }
+
+    form section:nth-of-type(1){
+        grid-row: 3;
+        color: var(--button-text);
+        /* border: 1px solid black; */
+    }
+    
+    .submit-close{
+        width: 65vw;
+    }
+
+    .submit-close button{
+        width: 6rem;
+    }
+
+    form .input-group{
+        width: 65vw;
+    }
+    
+    form .input-group:nth-of-type(4){
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+    }
+
+
+    form .input-group .form-control{
+        height: 3vh;
+    }
+
+    .library-container{
+        grid-template-columns: repeat(3, 1fr);
+        margin: 2vh 0 0 0;
+        gap: 2vh;
+        place-items: center;
+    }
+
+    .library-container .card{
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+    }
+
+    .card-body h4{
+        font-size: 1rem;
+    }
+
+    .delete-change{
+        gap: 1.5vw;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) and (min-width: 461px) {
+    form{
+        border-radius: 10px;
+        margin: 0 8vw 0 8vw;
+        height: 36.43vh;
+        width: 23rem;
         grid-template-rows: 1vh 4rem;
     }
 
@@ -152,27 +233,28 @@ form h1{
     }
 
     .library-container{
+        max-width: 100%;
+        grid-template-columns: repeat(2, 1fr);
         margin: 2vh 0 0 0;
-        flex-direction: column;
-        align-items: center;
+        place-items: center;
         gap: 2vh;
     }
 
     .library-container .card{
         display: flex;
         flex-direction: column;
-        width: 80vw;
+        width: 45vw;
     }
 
-    /* .card-body *{
-        border: 1px solid brown;
-    } */
+    .library-container .card h4{
+        font-size: clamp(0.8rem, 2vw, 5rem);
+    }
 
-    .card-body h4{
-        font-size: 1rem;
+    .library-container .card button{
+        font-size: clamp(0.65rem, 1.5vw, 5rem);
     }
 
     .delete-change{
         gap: 1.5vw;
-    }
+    } 
 }
